@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Arithmetic Operators</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C Reference page for all operators in the C programming language"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,learn,creference,operators,arithmetic"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Arithmetic Operators</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: August 20, 2015
+				</p>
+				<hr/>
+
+				<h3>Binary Arithmetic Operators</h3>
+				<p>
+					Binary operators are operators that require two operands.
+					The binary arithmetic operators in C are addition(+), subtraction(-), multiplication(*), division(/), and modulus(%).
+					Below are very basic examples of the addition, subtraction, multiplication, and division operators.
+				</p>
+<pre>
+<span class="com">// a will have a value of 10</span>
+<span class="kwd">int</span> a = <span class="int">8</span> + <span class="int">2</span>;
+<span class="com">// b will have a value of 6</span>
+<span class="kwd">int</span> b = <span class="int">8</span> - <span class="int">2</span>;
+<span class="com">// c will have a value of 16</span>
+<span class="kwd">int</span> c = <span class="int">8</span> * <span class="int">2</span>;
+<span class="com">// d will have a value of 4</span>
+<span class="kwd">int</span> d = <span class="int">8</span> / <span class="int">2</span>;
+</pre>
+
+				<h4>Modulus Operator <code>%</code></h4>
+				<p>
+					The modulus operator returns the remainder of integer division.
+					For example, this could be really useful when checking if a number is even or odd.
+				</p>
+<pre>
+<span class="com">// If result is 0, then some_integer is even.</span>
+<span class="com">// If result is 1, then some_integer is odd.</span>
+<span class="kwd">int</span> result = some_integer % <span class="int">2</span>;
+</pre>
+				<hr/>
+
+				<h3>Unary Arithmetic Operators</h3>
+				<p>
+					Unary operators are operators that require only one operand.
+					The arithmetic unary operators in C are the incrememnt operator(++) and the decrement operator(--).
+					These operators can either be placed before the operand(prefix) or after the operand(postfix).
+				</p>
+
+				<h4>Prefix</h4>
+				<p>
+					When an increment or decrement operator is placed before the operand, it is called a prefix increment or prefix decrement operator.
+					A prefix operator first increments or decrements the operand before it is used in its current expression.
+					For example:
+				</p>
+<pre>
+<span class="kwd">int</span> i = <span class="int">0</span>;
+printf(<span class="str">"%d\n"</span>, ++i);
+</pre>
+				<p>
+				The above code outputs <code>1</code> since the prefix operator says increment i by 1 before it used in the current expression.
+				</p>
+
+				<h4>Postfix</h4>
+				<p>
+					When an increment or decrement operator is placed after the operand, it is called a postfix increment or postfix decrement operator.
+					A postfix operator first uses the operand in its current expression and then increments or decrements it.
+					For example:
+				</p>
+<pre>
+<span class="kwd">int</span> i = <span class="int">0</span>;
+printf(<span class="str">"%d\n"</span>, i++);
+</pre>
+				<p>
+				The above code outputs <code>0</code> since the postfix operator says use the operand in the current expression and then increment it by 1.
+				</p>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

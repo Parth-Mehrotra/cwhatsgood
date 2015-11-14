@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Enumerated Data Types</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming tutorial for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,reference,enumerated,data,types"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Enumerations</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: September 8, 2015
+				</p>
+				<p>
+					An enumeration, or enum for short, is a set of integer constants.
+					The integer constants declared in the enum are called enumerators.
+					A enum must declare at least one enumerator.
+					However, specifying a name for the enum is optional as well as naming any identifiers after the enum declaration.
+					The basic syntax for declaring an enum is:<br/>
+<pre>
+<span class="kwd">enum</span> <i>enum-name</i><span class="com">[optional]</span> {
+	<i>enumerators</i>
+} <i>identifiers</i><span class="com">[optional]</span>;
+</pre>
+					For example, an enum could be named and used as follows:
+				</p>
+<pre>
+<span class="kwd">enum</span> day_of_week {
+	SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+};
+
+<span class="kwd">enum</span> day_of_week day = TUESDAY;
+</pre>
+				<p>Or, the same could be accomplished with:</p>
+<pre>
+<span class="kwd">enum</span> {
+	SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+} day;
+
+day = TUESDAY;
+</pre>
+				<h3>Changing the default values</h3>
+				<p>
+					By default, the first enumerator in an enum has a value of 0, and every enumerator after that has the value of the previous enumerator plus 1.
+					This can be changed by explicitly giving values to each enumerator.
+					For example, let's say we want the enumerators in the day of the week enum to contain the day number each is in the week.
+				</p>
+<pre>
+<span class="kwd">enum</span> day_of_week {
+	SUNDAY = <span class="num">1</span>, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+};
+</pre>
+				<p>
+					Now the value of each enumerator is increased by 1 from the previous example since the initial enumerator value is 1.
+				</p>
+				<h3>Using enum in struct</h3>
+				<p>
+					It is very easy to use an enum to store a value of a data member in a struct.
+					Let's say there is a date struct that stores the day of the month, month, and year.
+					The month can only be one of twelve possibilities and would be most efficiently stored as an integer value.
+					This is the perfect situation for using an enum.
+				</p>
+<pre>
+<span class="pp">#include &lt;stdio.h&gt;</span>
+
+<span class="kwd">struct</span> date {
+	<span class="com">// Declare enum and month identifier</span>
+	<span class="com">// right in the struct</span>
+	<span class="kwd">enum</span> {
+		JANUARY = <span class="num">1</span>, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY,
+		AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER
+	} month;
+
+	<span class="kwd">int</span> day_of_month;
+	<span class="kwd">int</span> year;
+} d;
+
+<span class="kwd">int</span> main() {
+	d.month = SEPTEMBER; <span class="com">// enum constants visible in declared scope</span>
+	d.day_of_month = <span class="num">7</span>;
+	d.year = <span class="num">2015</span>;
+
+	printf(<span class="str">"The date is %d/%d/%d\n"</span>, d.month, d.day_of_month, d.year);
+	<span class="kwd">return</span> <span class="num">0</span>;
+}
+</pre>
+				<p>
+					Output:
+				</p>
+				<code>The date is 9/7/2015</code>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

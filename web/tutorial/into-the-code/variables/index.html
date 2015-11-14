@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - Into the Code - Variables</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming resource for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,learn,overview"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="tut-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Variables</h2>
+				<p>Author: Steve Russo<br/>Last Updated: August 20, 2015</p>
+				<p>
+					A variable is a name given to a section of memory that your program controls.
+					Read on to learn about how to delare and manipulate variables.
+				</p>
+				<hr/>
+
+				<h3>Declaring Variables</h3>
+				<p>
+					Delaring a variable is the first thing that must be done before we can use it in any way.
+					There are two major parts that go into a variable declaration: the data type and the name.
+					All variable declarations follow this pattern: <br/><code>type variable_name;</code><br/>
+					Below is an example where we delare a integer variable named count.
+				</p>
+<pre>
+<span class="kwd">int</span> <span>count</span><span>;</span>
+<span class="kwd">char</span> <span>c</span><span>;</span>
+</pre>
+				<p>
+					You could also declare multiple variables in one statement.
+				</p>
+<pre>
+<span class="kwd">int</span> <span>count, number, id</span><span>;</span>
+<span class="kwd">double</span> <span>rate, deposit_amount</span><span>;</span>
+</pre>
+				<hr/>
+
+				<h3>Initializing Variables</h3>
+				<p>
+					When a variable is declared, it is assigned the amount of memory mandated by its data type (in this case, int).
+					At this point, the value contained in the variable is whatever was already in that section of memory.
+					If we want to assign a variable an initial value (which is usually a good idea), we must initialize it.
+					Below is an example of initialization of the variable count that is declared as an int.
+				</p>
+<pre>
+<span class="kwd">int</span> <span>count</span><span>;</span>
+<span>count</span> <span>=</span> <span class="int">0</span><span>;</span>
+
+<span class="kwd">float</span> <span>f</span><span>;</span>
+<span>f</span> <span>=</span> <span class="int">5.7</span><span>;</span>
+</pre>
+				<p>
+					Alternatively, you can declare and initialize a variable in one statement as follows.
+				</p>
+<pre>
+<span class="kwd">int</span> <span>id = <span class="int">4253</span>, count</span> <span>=</span> <span class="int">0</span><span>;</span>
+<span class="kwd">double</span> <span>deposit_amount</span> <span>=</span> <span class="int">753.89</span><span>;</span>
+<span class="kwd">char</span> <span>c</span> <span>=</span> <span class="int">'C'</span><span>;</span>
+</pre>
+				<p>
+					Either way has the same result: declare count and it holds the value of 0.
+				</p>
+
+				<h5>Assigment Operator (=)</h5>
+				<p>
+					The example above is the first time this tutorial uses the equals sign.
+					In C, this is referred to as the assignment operator because it is used to assign values to variables.
+				</p>
+				<hr/>
+
+				<h3>Give It a Try</h3>
+				<p>
+					Now that we know how to declare and initialize a variable, lets give it a try in a program.
+				</p>
+<pre>
+<span class="pp"><span>#include</span> <span>&lt;stdio.h&gt;</span></span>
+
+<span class="kwd">int</span> <span>main</span><span>() {</span>
+<span class="kwd">&#09;int</span>  count</span> <span>=</span> <span class="int">0</span><span>;</span>
+<span class="kwd">&#09;double</span> <span>deposit_amount</span> <span>=</span> <span class="int">753.89</span><span>;</span>
+<span class="kwd">&#09;char</span> <span>c</span> <span>=</span> <span class="int">'C'</span><span>;</span>
+
+<span>&#09;printf(<span class="str">"%d\n"</span>, count);</span>
+<span>&#09;printf(<span class="str">"%f\n"</span>, deposit_amount);</span>
+<span>&#09;printf(<span class="str">"%c\n"</span>, c);</span>
+<span class="ret">&#09;return </span><span class="int">0</span><span>;</span>
+<span>}</span>
+</pre>
+				<p>
+					This code declares an integer variable named count and initializes it to 0.
+					Then it prints out the value.
+					Experiment with this program by changing the values of the variables in the program.
+				</p>
+				<hr/>
+
+				<h3>Valid Identifiers</h3>
+				<p>
+					Identifier is just another word for a variable or function name.
+					In C, identifiers can only consist of letters and numbers and must start with a letter.
+					(The underscore character (_) is considered a letter.)
+					Variables in C are case-sensitive so a variable named Count is different from a variable named count.
+					There is no established way to name variables or functions in C.
+				</p>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

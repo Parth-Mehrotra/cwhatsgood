@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Logical Operators</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C Reference page for all operators in the C programming language"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,learn,creference,operators,logical"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Logical Operators</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: August 22, 2015
+				</p>
+				<hr/>
+
+				<h3>Logical AND <code>&&</code></h3>
+				<p>
+					The logical AND operator requires two operands and returns true when both operands are true.
+					A boolean expression using the logical AND operator short circuts at the first false value.
+					Consider the following code where we check if an integer is inclusively in between 0 and 100:
+				</p>
+<pre>
+<span class="com">// read in an integer</span>
+<span class="kwd">int</span> i;
+scanf(<span class="str">"%d"</span>, &i);
+
+<span class="com">// check if i is greater than or equal to 0</span>
+<span class="com">// and that its less than or equal to 100</span>
+<span class="kwd">if</span> (i &gt;= <span class="int">0</span> && i &lt;= <span class="int">100</span>) {
+	printf(<span class="str">"%d is between 0 and 100\n"</span>, i);
+} <span class="kwd">else</span> {
+	printf(<span class="str">"%d is not between 0 and 100\n"</span>, i);
+}
+</pre>
+				<p>
+					First, an integer is read in and stored in i.
+					Since we are checking if i is within a certain range, we have two conditions to be checked and both must evaluates to true.
+					Therefore, we use the logical AND operator which will only return true if both conditions its operating on are true.
+				</p>
+				<hr/>
+
+				<h3>Logical OR <code>||</code></h3>
+				<p>
+					The logical or operator requires two operands and returns true as long as only one of its operands evaluates to true.
+					Consider the following code where we check if an integer is outside the range of 0 to 100:
+				</p>
+<pre>
+<span class="com">// read in an integer</span>
+<span class="kwd">int</span> i;
+scanf(<span class="str">"%d"</span>, &i);
+
+<span class="com">// check if i is less than 0 or</span>
+<span class="com">// that its greater than 100</span>
+<span class="kwd">if</span> (i &lt; <span class="int">0</span> || i &gt; <span class="int">100</span>) {
+	printf(<span class="str">"%d is outside range of 0 and 100\n"</span>, i);
+} <span class="kwd">else</span> {
+	printf(<span class="str">"%d is in between 0 and 100\n"</span>, i);
+}
+</pre>
+				<p>
+					First, an integer is read in and stored in i.
+					Since we are checking if i is outside a certain range, we have two conditions to be checked and one of them must evaluate to true.
+					Therefore, we use the logical OR operator which will return true if one of the conditions its operating on is true.
+					Either i is less than 0 or greater then 100, but it can't be both.
+				</p>
+				<hr/>
+
+				<h3>Logical NOT <code>!</code></h3>
+				<p>
+					The logical NOT operand requires one operand and returns the opposite of that operands logical state.
+					Example:
+				</p>
+<pre>
+<span class="kwd">int</span> t = <span class="int">1</span>;
+<span class="kwd">int</span> f = <span class="int">0</span>;
+
+printf(<span class="str">"%d\n"</span>, !t); <span class="com">// prints 0</span>
+printf(<span class="str">"%d\n"</span>, !f); <span class="com">// prints 1</span>
+</pre>
+				<hr/>
+
+				<h3>Ternary <code>?:</code></h3>
+				<p>
+					The ternary operator(sometimes referred to as the "conditional" operator) requires three operands.
+					It is typically used for decision making when assigning values to variables.
+					The syntax for the ternary operator is: <br/><code>(condition) ? condition_true : condition_false</code><br/>.
+					The code below illustrates how a value would be assigned to a variable using an if statement.
+					Assume n has some unknown integer value.
+				</p>
+<pre>
+<span class="kwd">int</span> r;
+<span class="kwd">if</span> (n != <span class="int">0</span>) {
+	r = <span class="int">100</span> / n;
+} <span class="kwd">else</span> {
+	r = 0;
+}
+</pre>
+				<p>
+					This code can be simplified using the ternary operator as shown below:
+				</p>
+<pre>
+<span class="kwd">int</span> r = (n != <span class="int">0</span>) ? <span class="int">100</span> / n : <span class="int">0</span>;
+</pre>
+				<p>
+					The code in both the examples above aims to divide 100 by an integer with an unknown value.
+					In order to prevent from dividing by 0 (which causes undefined behavior), there is a check that i is not 0 before any division.
+					The code in both examples produce the same exact results. The ternary operator simplifies the code.
+				</p>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

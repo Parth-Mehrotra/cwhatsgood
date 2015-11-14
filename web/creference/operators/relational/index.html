@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Relational Operators</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C Reference page for all operators in the C programming language"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,learn,creference,operators,relational"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Relational Operators</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: September 3, 2015
+				</p>
+				<hr/>
+
+				<h3>Equal To <code>==</code>, Not Equal To <code>!=</code></h3>
+				<p>
+					As their names suggest, the equal to and not equal to operators test for equality and inequality (respectively) among two expressions.
+					The <code>==</code> operator will return true if the two expressions are equal, and the <code>!=</code> operator will return true if the two expressions are not equal.
+					Below is a simple example in C.
+				</p>
+<pre>
+<span class="kwd">int</span> n1 = <span class="num">4</span>;
+<span class="kwd">int</span> n2 = <span class="num">8</span>;
+
+<span class="com">// check if n1 and n2 are not equal</span>
+<span class="kwd">if</span> (n1 != n2) {
+	printf(<span class="str">"n1 and n2 have different values\n"</span>);
+}
+
+<span class="com">// compare the value returned by an</span>
+<span class="com">// arithmetic expression to a variable</span>
+<span class="kwd">if</span> (n1 * <span class="num">2</span> == n2) {
+	printf(<span class="str">"n1 * 2 is equal to n2\n"</span>);
+}
+</pre>
+				<hr/>
+
+				<h3>Greater Than <code>&gt;</code>, Less Than <code>&lt;</code></h3>
+				<p>
+					The greater than operator compares two expressions and returns true if the value of the first expression is greater than the value of the second expression.
+					The less than operator compares two expressions and returns true if the value of the first expression is less than the value of the second expression.
+					Below is a simple example in C.
+				</p>
+<pre>
+<span class="kwd">int</span> n1 = <span class="num">4</span>;
+<span class="kwd">int</span> n2 = <span class="num">8</span>;
+
+<span class="com">// check if n1 is greater than n2</span>
+<span class="kwd">if</span> (n1 &gt; n2) {
+	printf(<span class="str">"n1 is greater than n2\n"</span>);
+}
+
+<span class="com">// check if n1 is less than n2</span>
+<span class="kwd">if</span> (n1 &lt; n2) {
+	printf(<span class="str">"n1 is less than n2\n"</span>);
+}
+</pre>
+				<h4>... Or Equal To<code>&gt;=</code> <code>&lt;=</code></h4>
+				<p>
+					The greater than or equal to operator <code>&gt;=</code> checks for equality as well as if the value of the first expression is greater than the value of the second expression.
+					Likewise, the less than or equal to operator <code>&lt;=</code> checks for equality as well as if the value of the first expression is less than the value of the second expression.
+					Below is a simple example in C.
+				</p>
+<pre>
+<span class="kwd">int</span> n1 = <span class="num">4</span>;
+<span class="kwd">int</span> n1 = <span class="num">8</span>;
+
+<span class="com">// check if n1 is greater than or equal to 4</span>
+<span class="kwd">if</span> (n1 &gt;= <span class="num">4</span>) {
+	printf(<span class="str">"n1 is greater than or equal to 4\n"</span>);
+}
+
+<span class="com">// compare the value returned by an</span>
+<span class="com">// arithmetic expression to n2</span>
+<span class="kwd">if</span> (<span class="num">6</span> + <span class="num">2</span> &lt;= n2) {
+	printf(<span class="str">"6 + 2 is less than or equal to n2\n"</span>);
+}
+</pre>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

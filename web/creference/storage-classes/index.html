@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Storage Classes</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming tutorial for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,reference,storage,classes"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Storage Classes</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: September 15, 2015
+				</p>
+				<p>
+					Storage classes specify the visibility (scope) and lifetime of variables and functions in C.
+					There are 4 storage classes:
+				</p>
+<pre>
+<span class="kwd">auto</span>
+<span class="kwd">extern</span>
+<span class="kwd">static</span>
+<span class="kwd">register</span>
+</pre>
+				<hr/>
+
+				<h3>auto</h3>
+				<p>
+					The keyword <code><span class="kwd">auto</span></code>, short for automatic, is used to refer to local variables (variables declared within functions).
+					Local variables, or automatic variables, come into existance when a function is invoked and cease to exist when a function exits.
+					These variables do not retain their values from one function call to the next.
+					If not initialized, automatic variables contain garbage values by default.
+					Auto is the default storage class and therefore rarely needs to be explicitly used.
+				</p>
+<pre>
+<span class="kwd">int</span> main() {
+	<span class="kwd">auto int</span> ai1 = <span class="num">0</span>;
+	<span class="kwd">int</span> ai2 = <span class="num">0</span>;
+	<span class="com">// auto is implicit for variables declared</span>
+	<span class="com">// inside functions. therefore,</span>
+	<span class="com">// ai1 and ai2 are both automatic variables</span>
+	<span class="com">// that are visible only inside main</span>
+	<span class="kwd">return</span> <span class="num">0</span>;
+}
+</pre>
+				<hr/>
+
+				<h3>extern</h3>
+				<p>
+					The <code><span class="kwd">extern</span></code> storage class is the default storage class for functions and therefore rarely needs to be explicity used.
+					However, for a global variable to be external, it must be explicitly declared so.
+					For example, consider the following header file.
+				</p>
+				<i>somefile.h</i>
+<pre>
+<span class="com">// name is an extern variable which</span>
+<span class="com">// can now be assigned a value</span>
+<span class="kwd">extern const char</span>* name;
+
+<span class="com">// print_name is external by default</span>
+<span class="kwd">void</span> print_name();
+</pre>
+				<p>
+					In order to implement <code>print_name</code> and define <code>name</code>, we create a C source file and include the header file.
+				</p>
+				<i>somefile.c</i>
+<pre>
+<span class="pp">#include &lt;stdio.h&gt;</span>
+<span class="pp">#include "somefile.h"</span>
+
+<span class="com">// assign name a value</span>
+<span class="kwd">const char</span>* name = <span class="str">"CWhatsGood"</span>;
+
+<span class="com">// implement print_name</span>
+<span class="kwd">void</span> print_name() {
+	printf(<span class="str">"%s\n"</span>, name);
+}
+</pre>
+				<p>
+					Now, in the main file, we can include the header and access the external variables and functions that are declared in the header and implemented/defined in the C source file.
+				</p>
+				<i>main.c</i>
+<pre>
+<span class="pp">#include &lt;stdio.h&gt;</span>
+<span class="pp">#include "somefile.h"</span>
+
+<span class="kwd">int</span> main() {
+	printf(<span class="str">"Access name from main: name = %s\n"</span>, name);
+	printf(<span class="str">"Call print_name: "</span>);
+	print_name();
+}
+</pre>
+				<p>
+					Now, compile and run the program as follows:
+				</p>
+<pre>
+cc main.c somefile.c -o main
+./main
+</pre>
+				<span>Output:</span>
+<pre>
+Access name from main: name = CWhatsGood
+Call print_name: CWhatsGood
+</pre>
+				<hr/>
+
+				<h3>static</h3>
+				<p>
+					The <code><span class="kwd">static</span></code> storage class specifier can be applied in several instances.
+					When a local variable is declared static, it stays in existence for the lifetime of the program and keeps it's value between function calls rather than losing it after each invokation.
+					For example:
+				</p>
+<pre>
+<span class="pp">#include &lt;stdio.h&gt;</span>
+
+<span class="kwd">static void</span> display_counter() {
+	<span class="kwd">static int</span> counter = <span class="num">0</span>;
+	printf(<span class="str">"counter = %d\n"</span>, ++counter);
+}
+
+<span class="kwd">int</span> main() {
+	<span class="kwd">for</span> (<span class="kwd">int</span> i = <span class="num">0</span>; i &lt; <span class="num">5</span>; i++) {
+		display_counter();
+	}
+	<span class="kwd">return</span> <span class="num">0</span>;
+}
+</pre>
+				<span>Output:</span>
+<pre>
+counter = 1
+counter = 2
+counter = 3
+counter = 4
+counter = 5
+</pre>
+				<p>
+					When a global function or global variable is declared static, the visibility of the function or variable in question is restricted to the file in which it is declared.
+					For example, the following function and variable are only visibile inside somefile.c.
+				</p>
+				<i>somefile.c</i>
+<pre>
+<span class="kwd">static char</span>* msg = <span class="str">"Hello"</span>;
+
+<span class="kwd">static void</span> print_msg() {
+	printf(<span class="str">"%s\n"</span>, msg);
+}
+</pre>
+				<hr/>
+
+				<h3>register</h3>
+				<p>
+					The storage class specifier <code><span class="kwd">register</span></code> is used to give the compiler a heads up that the variable being declared will be used quite often.
+					In an attempt to optiimize the program, the compiler can place the variable into the machine registers rather than in RAM in order to speed up access to the variable.
+					Declaring a variable as having a register storage class does not guarantee it will actually be placed in a register.
+					It's impossible to take the address of a register variable whether or not it is actually placed in a register or not.
+				</p>
+				<p>
+					The register storage class specifier can only be applied to local variables (variables declared within functions) and to the parameters of a function.
+					The possible syntax declarations are as follows.
+				</p>
+<pre>
+<span class="kwd">void</span> func(<span class="kwd">register int</span> rp) {
+	<span class="kwd">register long</span> ri;
+}
+</pre>
+				<hr/>
+
+				<div class="footnotes">
+					<b>SOURCES</b>
+					<p>
+						Kernighan, Brian W., and Dennis M. Ritchie. 
+						<a target="_blank" href="http://www.amazon.com/gp/product/0131103628/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0131103628&linkCode=as2&tag=cwh05-20&linkId=E5NR2MYOAU7Z7KI3">
+							<i>The C Programming Language.</i>
+						</a> 
+						Englewood Cliffs, NJ: Prentice Hall, 1988. Print.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

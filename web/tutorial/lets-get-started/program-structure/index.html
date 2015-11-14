@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - Let's Get Started - Program Structure</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming resource for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,learn,overview"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="tut-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Program Structure</h2>
+				<p>Author: Steve Russo<br/>Last Updated: August 20, 2015</p>
+				<p>
+					Every C program follows a basic structure and has certain behaviors.
+					This, along with basic syntax<sup>1</sup>, is covered in the section below.
+				</p>
+				<hr/>
+
+				<h3>Main Function</h3>
+				<p>
+					In order for an operating system to run your program, it has to know where to begin.
+					This is why every program must define a function<sup>2</sup> called "main."
+					Your program execution will start at the beginning of main.
+				</p>
+				
+				<h5>Exit Status (return 0;)</h5>
+				<p>
+					Consider the following: you have two programs you would like to run one after the other.
+					However, you only want to run the second one if the first one executed successfully.
+					How would you determine if the first program had a successful run?
+					You could check its exit status.
+				</p>
+				<p>
+					Every program has an exit status which is expressed in the form of an integer.
+					This is why in our Hello World example, we give main a return type<sup>3</sup> of int.
+					The value returned from main can be your programs exit status. (Zero typically indicates success.)
+				</p>
+				<hr/>
+
+				<h3>Semicolons</h3>
+				<p>
+					In C and many other programming languages, semicolons are used to terminate statements.
+					Notice in the Hello World example covered in the previous seciton, every statement in the main function ended with a semicolon.
+					Experiment with the Hello World example by leaving out semicolons.
+					Try compiling and read the syntax error you get.
+				</p>
+				<hr/>
+
+				<h3>Comments</h3>
+				<p>
+					Comments are a way to explain and describe your code.
+					They are completely ignored by the compiler.
+					In C, there are two types of comments: block comments and one line comments.
+					Block comments start with "/*" and end with "*/" and can span over multiple lines.
+					One line comments start with "//" and end when the line ends.
+				</p>
+<pre>
+<span class="com">/* This is a block comment. It can
+  span multiple lines. */</span>
+<span class="kwd">int</span> <span>main</span><span>() {</span>
+<span class="com">&#09;// This is a one line comment</span>
+<span class="ret">&#09;return </span><span class="int">0</span><span>;</span>
+<span>}</span>
+</pre>
+				<h5>Why Use Comments?</h5>
+				<p>
+					One reason to use comments is when you know somebody else is going to be reviewing your code.
+					Sometimes, when someone else is trying to figure out what your code does, it's easier to read comments rather than go through and read all the code.
+					Another reason may be if you are managing a large amount of source code that gets complicated in some spots.
+					It could be to your own benefit to write comments so you know whats happening when look at code after a long time of never seeing it.
+				</p>
+				<h5>Too Many Comments Can Be Bad</h5>
+				<p>
+					Some people say there is no such thing as too many comments.
+					While commenting can be a good practice, there is such a thing as too many.
+					Think about it. If your code is cluttered with comments all over the place, anyone who looks at it will have a hard time figuring out what everything means.
+					A good rule of thumb is to write code where comments would be unnecessary.
+					When that's not possible, use comments sparingly.
+				</p>
+				<hr/>
+
+				<h3>Preprocessor (Basics)</h3>
+				<p>
+					The preprocessor (usually a separate program invoked by the compiler) can help accomplish several things.
+					For now, its important to start off knowing that it allows the programmer to include header files<sup>4</sup>.
+					Recall in our Hello World example, that "#include <stdio.h>" was the first line of code.
+					When you compile your C source code, the preprocessor looks for lines beginning with a '#' symbol.
+					In this case, it finds "#include <stdio.h>" and copies the contents of stdio.h into the source so that we now have the "printf" function declaration (among many other things as well).
+				</p>
+				<hr/>
+
+				<div class="row">
+					<div class="columns">
+						<div class="footnotes">
+							<b>FOOTNOTES</b>
+							<p>1. <u>syntax</u> - set of rules that define what symbols make up valid code.</p>
+							<p>2. <u>function</u> - group of statements to perform a task.</p>
+							<hr/>
+							<b>SOURCES</b>
+							<p><a href="https://en.wikipedia.org/wiki/Syntax_(programming_languages)">https://en.wikipedia.org/wiki/Syntax_(programming_languages)</a></p>
+							<p><a href="https://en.wikipedia.org/wiki/C_preprocessor">https://en.wikipedia.org/wiki/C_preprocessor</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

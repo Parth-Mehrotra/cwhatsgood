@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Arithmetic Data Types</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming tutorial for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,creference,data,types,arithmetic"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Arithmetic Data Types</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: August 29, 2015
+				</p>
+				<p>
+					The arithmetic data types in C are integers and floating points (decimals).
+				</p>
+				<p>
+					To determine the exact size of a data type on your current machine, use: <br/><code><span class="kwd">sizeof</span>(<i>data_type</i>);</code>
+				</p>
+				<hr/>
+
+				<h3>Integers</h3>
+				<p>
+					Below is a table showing the standard integer types in C and the range of possible values each can have.
+					The storage size shown for each is the storage size that most C implementations use today.
+					(Storage size is in bytes.)
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<td>Type</td>
+							<td>Storage</td>
+							<td>Range</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>char</td>
+							<td>1</td>
+							<td>-2<sup>7</sup><span class="sep"> to </span>2<sup>7</sup>-1<span class="sep"> or </span>-128 to 127</td>
+						</tr>
+						<tr>
+							<td>unsigned char</td>
+							<td>1</td>
+							<td>0<span class="sep"> to </span> 2<sup>8</sup>-1<span class="sep"> or </span>0 to 255</td>
+						</tr>
+						<tr>
+							<td>short</td>
+							<td>2</td>
+							<td>-2<sup>15</sup><span class="sep"> to </span>2<sup>15</sup>-1<span class="sep"> or </span>-32,768 to 32,767</td>
+						</tr>
+						<tr>
+							<td>unsigned short</td>
+							<td>2</td>
+							<td>0<span class="sep"> to </span> 2<sup>16</sup>-1<span class="sep"> or </span>0 to 65,535</td>
+						</tr>
+						<tr>
+							<td>int</td>
+							<td>4</td>
+							<td>-2<sup>31</sup><span class="sep"> to </span>2<sup>31</sup>-1<span class="sep"> or </span>-2,147,483,648 to 2,147,483,647</td>
+						</tr>
+						<tr>
+							<td>unsigned int</td>
+							<td>4</td>
+							<td>0<span class="sep"> to </span> 2<sup>32</sup>-1<span class="sep"> or </span>0 to 4,294,967,295</td>
+						</tr>
+						<tr>
+							<td>long</td>
+							<td>8</td>
+							<td>-2<sup>63</sup><span class="sep"> to </span>2<sup>63</sup>-1<span class="sep"> or </span>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+						</tr>
+						<tr>
+							<td>unsigned long</td>
+							<td>8</td>
+							<td>0<span class="sep"> to </span> 2<sup>64</sup>-1<span class="sep"> or </span>0 to 18,446,744,073,709,551,615</td>
+						</tr>
+					</tbody>
+				</table>
+				<hr/>
+
+				<h3>Floating Points</h3>
+				<p>
+					Below is a table showing the standard floating point data types in C.
+					(Storage size is in bytes. Precision is number of digits that can be stored after the decimal point.)
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<td>Type</td>
+							<td>Storage</td>
+							<td>Precision</td>
+							<td>Range</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>float</td>
+							<td>4</td>
+							<td>6</td>
+							<td>1.2<small>E</small>-38<span class="sep">to</span>3.4<small>E</small>38</td>
+						</tr>
+						<tr>
+							<td>double</td>
+							<td>8</td>
+							<td>15</td>
+							<td>2.3<small>E</small>-308<span class="sep">to</span>1.7<small>E</small>308</td>
+						</tr>
+						<tr>
+							<td>long double</td>
+							<td>10</td>
+							<td>19</td>
+							<td>3.4<small>E</small>-4932<span class="sep">to</span>1.1<small>E</small>4932</td>
+						</tr>
+					</tbody>
+				</table>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

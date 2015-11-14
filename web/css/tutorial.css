@@ -1,0 +1,58 @@
+
+.row {
+	max-width: 80rem;
+}
+
+.sidemap, .footnotes, pre {
+	background: #fafafa;
+}
+.sidemap, .footnotes {
+	padding: 20px;
+}
+.sidemap ul {
+	margin-bottom: 0;
+}
+
+.custom-side-nav {
+	display: block;
+	list-style-position: outside;
+	list-style-type: none;
+	padding-bottom: 0.875rem;
+}
+.custom-side-nav li {
+	font-size: 0.875rem;
+	font-weight: normal;
+	margin: 0 0 0.4375rem 0.65rem;
+}
+
+h2 {
+	margin-top: 20px;
+}
+
+pre {
+	font-family: Consolas, "Liberation Mono", Courier, monospace;
+	line-height: 1.3rem;
+	padding: 1rem;
+}
+
+.pp {
+	color: #ba55d3;
+}
+.kwd, .ret {
+	color: blue;
+}
+.int, .num {
+	color: orange;
+	font-weight: bold;
+}
+.str {
+	color: gray;
+}
+.com {
+	color: green;
+}
+
+table small {
+	font-size: .8em;
+}
+

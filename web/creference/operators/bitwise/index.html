@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Bitwise Operators</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C Reference page for all operators in the C programming language"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,creference,operators,bitwise"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Bitwise Operators</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: August 27, 2015
+				</p>
+				<hr/>
+
+				<h3>Bitwise AND <code>&</code></h3>
+				<p>
+					The bitwise AND operator is a binary operator that performs the AND operation on each of the pairs of bits from both operands.
+					This means the result will only have a 1 at a certain position if both of the operands have a 1 at that same position.
+					Below is an example of raw binary numbers and the result that would come from a bitwise AND operation on them.
+				</p>
+<pre>
+N<sub>1</sub>: 			0010 0110
+N<sub>2</sub>: 			0110 0101
+			---------
+(N<sub>1</sub> & N<sub>2</sub>): 	0010 0100
+</pre>
+				<p>
+					A simple example in C is shown below.
+				</p>
+<pre>
+<span class="kwd">char</span> n1 = <span class="num">38</span>;
+<span class="kwd">char</span> n2 = <span class="num">101</span>;
+printf(<span class="str">"%d\n"</span>, (n1 & n2));
+</pre>
+				<p>
+					This above code would output <code>36</code> which is <code>0010 0100</code> in binary.
+				</p>
+				<hr/>
+
+				<h3>Bitwise OR <code>|</code></h3>
+				<p>
+					The bitwise OR operator is a binary operator that performs the OR operation on each of the pairs of bits from both operands.
+					This means the result will have a 1 at the position where either operand has a 1.
+					Below is an example showing raw binary and the result from a bitwise OR operation on them.
+				</p>
+<pre>
+N<sub>1</sub>: 			0010 0110
+N<sub>2</sub>: 			0110 0101
+			---------
+(N<sub>1</sub> | N<sub>2</sub>): 	0110 0111
+</pre>
+				<p>
+					A simple example in C is shown below.
+				</p>
+<pre>
+<span class="kwd">char</span> n1 = <span class="num">38</span>;
+<span class="kwd">char</span> n2 = <span class="num">101</span>;
+printf(<span class="str">"%d\n"</span>, (n1 | n2));
+</pre>
+				<p>
+					This above code would output <code>103</code> which is <code>0110 0111</code> in binary.
+				</p>
+				<hr/>
+
+				<h3>Bitwise XOR <code>^</code></h3>
+				<p>
+					The bitwise XOR operator (sometimes referred to as the "bitwise exclusive OR operator") is a binary operator that performs the XOR operation on each of the pairs of bits from both operands.
+					This means the result will have a 1 at the positions where the pairs of bits from each operand are different.
+					Below is an example showing raw binary and the result from a bitwise XOR operation on them.
+				</p>
+<pre>
+N<sub>1</sub>: 			0010 0110
+N<sub>2</sub>: 			0110 0101
+			---------
+(N<sub>1</sub> ^ N<sub>2</sub>): 	0100 0011
+</pre>
+				<p>
+					A simple example in C is shown below.
+				</p>
+<pre>
+<span class="kwd">char</span> n1 = <span class="num">38</span>;
+<span class="kwd">char</span> n2 = <span class="num">101</span>;
+printf(<span class="str">"%d\n"</span>, (n1 ^ n2));
+</pre>
+				<p>
+					This above code would output <code>67</code> which is <code>0100 0011</code> in binary.
+				</p>
+				<hr/>
+
+				<h3>Bitwise NOT <code>~</code></h3>
+				<p>
+					The bitwise NOT operator (often times referred to as the "One's Compliment operator") is a unary operator that performs the NOT operation on each bit.
+					This means if the bit is a 1, it becomes a 0. If the bit is a 0, it becomes a 1.
+					The example below uses raw binary to show an operand and the result when the bitwise NOT operation is performed on that operand.
+				</p>
+<pre>
+N<sub>1</sub>: 		0010 0110
+		---------
+(~N<sub>1</sub>): 	1101 1001
+</pre>
+				<p>
+					A simple example in C is shown below.
+				</p>
+<pre>
+<span class="kwd">char</span> n1 = <span class="num">38</span>;
+printf(<span class="str">"%d\n"</span>, ~n1);
+</pre>
+				<p>
+					The code above would output <code>-39</code> which is <code>1101 1001</code>.
+					(Since n1 is a signed char, the high order bit is used to determine if its positive or negative.)
+				</p>
+				<hr/>
+
+				<h3>Bitwise Right Shift <code>&gt;&gt;</code></h3>
+				<p>
+					The bitwise right shift operator is a binary operator that will shift the first operand's bits to the right the number of times specified by the second operand.
+					The example below uses raw binary to show an operand that will have its bits shifted to the right one time.
+				</p>
+<pre>
+N<sub>1</sub>: 			0010 0110
+			---------
+(~N<sub>1</sub> &gt;&gt; 1): 	0001 0011
+</pre>
+				<p>
+					A simple example in C is shown below.
+				</p>
+<pre>
+<span class="kwd">char</span> n1 = <span class="num">38</span>;
+printf(<span class="str">"%d\n"</span>, (n1 &gt;&gt; <span class="num">1</span>));
+</pre>
+				<p>
+					The code above would output <code>19</code> which is <code>0001 0011</code>.
+				</p>
+				<hr/>
+
+				<h3>Bitwise Left Shift <code>&lt;&lt;</code></h3>
+				<p>
+					The bitwise left shift operator is a binary operator that will shift the first operand's bits to the left the number of times specified by the second operand.
+					The example below uses raw binary to show an operand that will have its bits shifted to the left one time.
+				</p>
+<pre>
+N<sub>1</sub>: 			0010 0110
+			---------
+(~N<sub>1</sub> &lt;&lt; 1): 	0100 1100
+</pre>
+				<p>
+					A simple example in C is shown below.
+				</p>
+<pre>
+<span class="kwd">char</span> n1 = <span class="num">38</span>;
+printf(<span class="str">"%d\n"</span>, (n1 &gt;&gt; <span class="num">1</span>));
+</pre>
+				<p>
+					The code above would output <code>76</code> which is <code>0100 1100</code>.
+				</p>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

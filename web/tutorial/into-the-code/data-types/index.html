@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - Into the Code - Data Types</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming resource for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,learn,overview"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="tut-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Basic Data Types</h2>
+				<p>Author: Steve Russo<br/>Last Updated: August 20, 2015</p>
+				<p>
+					In programming, a data type describes a variable<sup>1</sup> and the memory that the value is contained in that memory.
+					C's arithmetic types (integers and floating points) are covered in the sections below.
+					(For a reference on all data types, check out the <a href="/creference/">C Reference</a>.)
+				</p>
+				<hr/>
+
+				<h3>Integers</h3>
+				<p>
+					Below is a table describing integer data types in C.
+					Storage size for each type varies by machine.
+					The ones used for this table are what most modern systems use.
+					(Storage size is in bytes.)
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<td>Type</td>
+							<td>Storage</td>
+							<td>Range</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>char</td>
+							<td>1</td>
+							<td>-128 to 127</td>
+						</tr>
+						<tr>
+							<td>unsigned char</td>
+							<td>1</td>
+							<td>0 to 255</td>
+						</tr>
+						<tr>
+							<td>short</td>
+							<td>2</td>
+							<td>-32,768 to 32,767</td>
+						</tr>
+						<tr>
+							<td>unsigned short</td>
+							<td>2</td>
+							<td>0 to 65,535</td>
+						</tr>
+						<tr>
+							<td>int</td>
+							<td>4</td>
+							<td>-2,147,483,648 to 2,147,483,647</td>
+						</tr>
+						<tr>
+							<td>unsigned int</td>
+							<td>4</td>
+							<td>0 to 4,294,967,295</td>
+						</tr>
+						<tr>
+							<td>long</td>
+							<td>8</td>
+							<td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+						</tr>
+						<tr>
+							<td>unsigned long</td>
+							<td>8</td>
+							<td>0 to 18,446,744,073,709,551,615</td>
+						</tr>
+					</tbody>
+				</table>
+				<hr/>
+
+				<h3>Floating Points</h3>
+				<p>
+					Floating point is a different way of saying a decimal number or fractional number.
+					Below is a simple chart explaining the floating point data types in C.
+					(Storage size is in bytes. Precision is the number of decimal places each data type can store.)
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<td>Type</td>
+							<td>Storage</td>
+							<td>Precision</td>
+							<td>Range</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>float</td>
+							<td>4</td>
+							<td>6</td>
+							<td>1.2<sup>-38</sup><span class="sep">to</span>3.4<sup>38</sup></td>
+						</tr>
+						<tr>
+							<td>double</td>
+							<td>8</td>
+							<td>15</td>
+							<td>2.3<sup>-308</sup><span class="sep">to</span>1.7<sup>308</sup></td>
+						</tr>
+						<tr>
+							<td>long double</td>
+							<td>10</td>
+							<td>19</td>
+							<td>3.4<sup>-4932</sup><span class="sep">to</span>1.1<sup>4932</sup></td>
+						</tr>
+					</tbody>
+				</table>
+				<hr/>
+
+				<p>
+					Go to the next section to learn how data types are used to create variables.
+				</p>
+
+				<div class="row">
+					<div class="columns">
+						<div class="footnotes">
+							<b>FOOTNOTES</b>
+							<p>1. variable - a name given to a section of memory that your program has control over. Much more detail is given in the next section, <a href="/into-the-code/variables/">Variables</a>.</p>
+							<hr/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

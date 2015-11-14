@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Type Qualifiers</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming tutorial for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,reference,type,qualifiers"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Type Qualifiers</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: September 8, 2015
+				</p>
+				<p>
+					Type qualifiers are used to declare special properties of variables.
+					In C, there are two type qualifiers, <code><span class="kwd">const</span></code> and <code><span class="kwd">volatile</span></code>.
+					These may appear with any of the type specifiers when declaring variables.
+				</p>
+				<hr/>
+
+				<h3>const</h3>
+				<p>
+					The type qualifier <code><span class="kwd">const</span></code> is used to place a variable in read-only memory.
+					(These variables qualified as const are referred to as "constants.")
+					In other words, a constant cannot have its value changed from whatever is initially assigned to it.
+					For example:
+				</p>
+<pre>
+<span class="kwd">int</span> main() {
+	<span class="kwd">const int</span> CONST_VAR = <span class="num">0</span>;
+	<span class="com">// CONST_VAR = 123; will cause compiler error</span>
+	<span class="com">// error: read-only variable is not assignable</span>
+	<span class="kwd">return</span> CONST_VAR;
+}
+</pre>
+				<p>
+					The variable CONST_VAR will always have a value of 0.
+					A program will not compile if there is an attempt to change the value of a constant anywhere in the code.
+				</p>
+				<p>(Constants are typically named with all capital letters.)</p>
+				<hr/>
+
+				<h3>volatile</h3>
+				<p>
+					The type qualifier <code><span class="kwd">volatile</span></code> is used to make certain that no optimization is applied to a variable where it otherwise could be.
+					This means that the variable's value is always the most recent value and not a cached one.
+					An example of when this could be practically applied is when a multithreaded application has threads that share resources that are constantly being modified.
+					By qualifying those resources as volatile, that is telling the compiler that no optimization should be applied so that the threads have the most recent values of each resource.
+				</p>
+				<p>
+					The syntax for declaring a variable as volatile is as follows.
+				</p>
+<pre>
+<span class="kwd">volatile int</span> vi;
+<span class="kwd">int volatile</span> vi;
+</pre>
+				<p>
+					Both statements will declare a volatile integer variable named vi.
+					The syntax for declaring a pointer to a volatile integer is the same.
+				</p>
+<pre>
+<span class="kwd">volatile int</span>* volptr;
+<span class="kwd">int volatile</span>* volptr;
+</pre>
+				<p>
+					Although rarely ever used, the syntax for declaring volatile pointers to non-volatile data is as follows.
+				</p>
+<pre>
+<span class="kwd">int</span>* <span class="kwd">volatile</span> volptr;
+</pre>
+				<p>
+					And finally, almost as rarely used, the syntax for declaring volatile pointers to volatile data is as follows.
+				</p>
+<pre>
+<span class="kwd">int volatile</span>* <span class="kwd">volatile</span> volptr;
+</pre>
+				<hr/>
+
+				<div class="footnotes">
+					<b>SOURCES</b>
+					<p>
+						Kernighan, Brian W., and Dennis M. Ritchie. 
+						<a target="_blank" href="http://www.amazon.com/gp/product/0131103628/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0131103628&linkCode=as2&tag=cwh05-20&linkId=E5NR2MYOAU7Z7KI3">
+							<i>The C Programming Language.</i>
+						</a> 
+						Englewood Cliffs, NJ: Prentice Hall, 1988. Print.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

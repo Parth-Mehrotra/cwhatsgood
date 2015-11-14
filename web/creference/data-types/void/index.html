@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - C Reference - Void</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming tutorial for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,tutorial,learn,overview"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="cref-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Void</h2>
+				<p>
+					Author: Steve Russo<br/>
+					Last Updated: August 29, 2015
+				</p>
+				<p>
+					The keyword <code><span class="kwd">void</span></code> is used to represent the absence of a data type.
+					In C, this can be used in three scenarios (covered below).
+				</p>
+				<hr/>
+
+				<h3>Function Return Value</h3>
+				<p>
+					Functions that do not return a value can be declared as void.
+					For example:
+				</p>
+<pre>
+<span class="kwd">void</span> has_no_return_val() {
+	printf(<span class="str">"Printing from void function\n"</span>);
+}
+</pre>
+				<p>
+					To return from a void function at any point, simply use <code><span class="kwd">return</span>;</code> since there is no value being returned.
+				</p>
+				<hr/>
+
+				<h3>Void Pointers</h3>
+				<p>
+					As stated above, void represents the absence of a data type.
+					Therefore, a void pointer can be thought of as "a pointer of some type."
+					Void pointers can be casted to any type.
+					Below is an example of how a void pointer can hold a pointer of any type.
+				</p>
+<pre>
+<span class="kwd">int</span> i = <span class="num">25</span>;
+<span class="kwd">char</span> c = <span class="str">'S'</span>;
+<span class="kwd">double</span> d = <span class="num">87.96</span>;
+
+<span class="kwd">void</span>* vptr;
+vptr = &#38;i; <span class="com">// vptr now has address of i</span>
+vptr = &#38;c; <span class="com">// vptr now has address of c</span>
+vptr = &#38;d; <span class="com">// vptr now has address of d</span>
+</pre>
+				<hr/>
+
+				<h3>Function Argument</h3>
+				<p>
+					If a function does not accept any arguments, you can place the keyword <code><span class="kwd">void</span></code> where an argument list would be to show that the function takes no arguments.
+					For example:
+				</p>
+<pre>
+<span class="kwd">void</span> foo() {
+	printf(<span class="str">"Printing from void function\n"</span>);
+}
+
+<span class="kwd">void</span> bar() {
+	foo(<span class="kwd">void</span>);
+}
+</pre>
+				<p>
+					This is a feature that was used more often when C was first created than today.
+					However, it is still valid and you still could see it every now and then.
+				</p>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>

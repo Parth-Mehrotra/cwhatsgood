@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CWhatsGood - Let's Get Started - Getting Setup - FreeBSD, Vim, and Clang</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="CWhatsGood - C programming resource for every programmer"/>
+		<meta name="keywords" content="cwhatsgood,c,programming,resource,learn,setup"/>
+		<meta name="author" content="cwhatsgood"/>
+		<link rel="shortcut icon" href="/img/ico/shortcut.png"/>
+		<link rel="stylesheet" type="text/css" href="/css/foundation.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/cwhatsgood.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/tutorial.css"/>
+	</head>
+	<body>
+		<nav class="top-bar" data-topbar></nav>
+
+		<div class="row">
+			<div id="tut-side-nav" class="large-3 medium-4 columns"></div>
+
+			<div class="large-9 medium-8 columns">
+				<h2>Getting Setup With Vim and Clang on FreeBSD</h2>
+				<p>Author: Steve Russo<br/>Last Updated: September 24, 2015</p>
+				<p>
+					I've been a vim user for a while now and personally can't imagine using another text editor for anything.
+					There is a very steep learning curve with vim, which is why I recommend reading
+					<a target="_blank" href="http://www.amazon.com/gp/product/1934356980/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1934356980&linkCode=as2&tag=cwh05-20&linkId=ICLBOJVDZ22A4F3U">
+						Practical Vim
+					</a> if you want to become a vim pro.
+					In the right hands, vim can be unbelievably efficient.
+				</p>
+				<hr/>
+
+				<h3>Installing Vim</h3>
+				<p>
+					Some operating systems built on top of FreeBSD already have vim installed.
+					Just to be safe though, let's open a terminal and run the install command:
+				</p>
+<pre>
+sudo pkg install vim
+</pre>
+				<p>
+					If vim is already installed, you'll get a message back saying so.
+					If not, this will run through the install after prompting you with how much more disk space will be used.
+				</p>
+				<hr/>
+
+				<h3>Clang. Its there.</h3>
+				<p>
+					Clang is the system compiler for FreeBSD.
+					Therefore, it is already there if you are running FreeBSD or any OS built on top of FreeBSD.
+					Now, with vim installed, you are all set to start coding and compling in C!
+				</p>
+				<hr/>
+			</div>
+		</div>
+
+		<footer></footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/fastclick.js"></script>
+		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="/js/cwhatsgood.js"></script>
+	</body>
+</html>
