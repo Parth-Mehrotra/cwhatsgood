@@ -1,6 +1,8 @@
 
 Makefile
 *.sh
+*.c
+*.h
 *.cgi
 
 bin
