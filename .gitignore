@@ -1,0 +1,11 @@
+
+Makefile
+*.sh
+*.cgi
+
+bin
+build
+db
+include
+src
+
