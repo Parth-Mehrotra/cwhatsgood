@@ -17,6 +17,9 @@ footer a {
 footer .copyright {
 	font-size: .85em;
 }
+.stay-connected a {
+	margin: 0 10px 0 10px;
+}
 
 pre {
 	-moz-tab-size: 4;
