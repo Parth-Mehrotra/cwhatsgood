@@ -1,4 +1,5 @@
 
+DROP TABLE IF EXISTS page_views;
 CREATE TABLE page_views(
 	view_id 				BIGSERIAL			PRIMARY KEY,
 	time_logged 			TIMESTAMP			NOT NULL DEFAULT CURRENT_TIMESTAMP,
