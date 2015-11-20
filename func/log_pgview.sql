@@ -12,14 +12,19 @@ CREATE OR REPLACE FUNCTION log_pgview(
 RETURNS INTEGER
 AS $$
 BEGIN
-	SELECT TRIM((SELECT COALESCE(_product, 'NuLL'))) INTO _product;
-	SELECT TRIM((SELECT COALESCE(_language, 'NuLL'))) INTO _language;
-	SELECT TRIM((SELECT COALESCE(_app_name, 'NuLL'))) INTO _app_name;
-	SELECT TRIM((SELECT COALESCE(_app_code_name, 'NuLL'))) INTO _app_code_name;
-	SELECT TRIM((SELECT COALESCE(_platform, 'NuLL'))) INTO _platform;
-	SELECT TRIM((SELECT COALESCE(_app_version, 'NuLL'))) INTO _app_version;
-	SELECT TRIM((SELECT COALESCE(_page, 'NuLL'))) INTO _page;
-	SELECT TRIM((SELECT COALESCE(_user_agent, 'NuLL'))) INTO _user_agent;
+	SELECT INTO _product TRIM((SELECT COALESCE(_product, 'NuLL')));
+	SELECT INTO _language TRIM((SELECT COALESCE(_language, 'NuLL')));
+	SELECT INTO _app_name TRIM((SELECT COALESCE(_app_name, 'NuLL')));
+	SELECT INTO _app_code_name TRIM((SELECT COALESCE(_app_code_name, 'NuLL')));
+	SELECT INTO _platform TRIM((SELECT COALESCE(_platform, 'NuLL')));
+	SELECT INTO _app_version TRIM((SELECT COALESCE(_app_version, 'NuLL')));
+	SELECT INTO _page TRIM((SELECT COALESCE(_page, 'NuLL')));
+	SELECT INTO _user_agent TRIM((SELECT COALESCE(_user_agent, 'NuLL')));
+
+	INSERT INTO
+		page_views(product,  language,  app_name,  app_code_name,  platform,  app_version,  page,  user_agent)
+		VALUES   (_product, _language, _app_name, _app_code_name, _platform, _app_version, _page, _user_agent)
+	;
 
 	RETURN 0;
 END;
