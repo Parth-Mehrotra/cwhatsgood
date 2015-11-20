@@ -12,7 +12,15 @@ CREATE OR REPLACE FUNCTION log_pgview(
 RETURNS INTEGER
 AS $$
 BEGIN
-	RAISE NOTICE 'log_pgview';
+	SELECT TRIM((SELECT COALESCE(_product, 'NuLL'))) INTO _product;
+	SELECT TRIM((SELECT COALESCE(_language, 'NuLL'))) INTO _language;
+	SELECT TRIM((SELECT COALESCE(_app_name, 'NuLL'))) INTO _app_name;
+	SELECT TRIM((SELECT COALESCE(_app_code_name, 'NuLL'))) INTO _app_code_name;
+	SELECT TRIM((SELECT COALESCE(_platform, 'NuLL'))) INTO _platform;
+	SELECT TRIM((SELECT COALESCE(_app_version, 'NuLL'))) INTO _app_version;
+	SELECT TRIM((SELECT COALESCE(_page, 'NuLL'))) INTO _page;
+	SELECT TRIM((SELECT COALESCE(_user_agent, 'NuLL'))) INTO _user_agent;
+
 	RETURN 0;
 END;
 $$ LANGUAGE PLPGSQL;
