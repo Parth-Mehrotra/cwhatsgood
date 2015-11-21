@@ -1,9 +1,9 @@
 
 Makefile
 *.sh
-*.c
 *.cgi
 
+web/terminology/get_terms.c
 bin
 build
 include
