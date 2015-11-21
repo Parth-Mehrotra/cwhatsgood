@@ -2,9 +2,9 @@
 Makefile
 *.sh
 
+include/cwhatsgood.h
+src/cwhatsgood.h
 web/terminology/get_terms.c
 bin
 build
-include
-src
 
