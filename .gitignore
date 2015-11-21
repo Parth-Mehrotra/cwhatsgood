@@ -1,7 +1,6 @@
 
 Makefile
 *.sh
-*.cgi
 
 web/terminology/get_terms.c
 bin
