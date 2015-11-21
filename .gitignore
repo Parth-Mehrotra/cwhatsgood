@@ -3,7 +3,7 @@ Makefile
 *.sh
 
 include/cwhatsgood.h
-src/cwhatsgood.h
+src/cwhatsgood.c
 web/terminology/get_terms.c
 bin
 build
