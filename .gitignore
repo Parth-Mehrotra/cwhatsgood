@@ -7,7 +7,6 @@ Makefile
 
 bin
 build
-db
 include
 src
 
